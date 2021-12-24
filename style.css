@@ -33,6 +33,7 @@ body .container{
     border-radius: 25px;
     padding: 0 1rem 1rem;
     margin-bottom: 15px;
+    margin-top: 170px;
 }
 
 body .container img{
@@ -42,6 +43,7 @@ body .container img{
 
 body .container .img_container{
     position: relative;
+    padding-top: 140px;
 }
 
 body .container .img_container .over{
@@ -50,8 +52,16 @@ body .container .img_container .over{
     width: 80%;
     left: 50%;
     right: 50%;
-    transform: translate(-50%, -50%);
-    
+    transform: translate(-50%, -50%);   
+}
+
+body .container .img_container .under{
+    position: absolute;
+    top: 4rem;
+    width: 80%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);   
 }
 
 body .container .header{
@@ -59,6 +69,38 @@ body .container .header{
     text-align: center;
 }
 
+body .container .main_container .accordian{
+    background-color: white;
+    background: url("images/icon-arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position:right;
+    color: var(--Dark-grayish-blue);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    padding-left: 0;
+    transition: 0.4s;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: thin;
+}
+
+body .container .main_container .accordian:active{
+    border:none;
+}
+
+.active, body .container .main_container .accordian:hover{
+    color: var(--Soft-red);
+}
+
+body .container .main_container .panel{
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
