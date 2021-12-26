@@ -46,22 +46,35 @@ body .container .img_container{
     padding-top: 140px;
 }
 
-body .container .img_container .over{
+body .container .img_container .over_mobile{
     position: absolute;
     top: -1.5rem;
     width: 80%;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);   
+    z-index: 99;
 }
 
-body .container .img_container .under{
+body .container .img_container .under_mobile{
     position: absolute;
     top: 4rem;
     width: 80%;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);   
+}
+
+body .container .img_container .over_desktop{
+    display: none;
+}
+
+body .container .img_container .under_desktop{
+    display: none;
+}
+
+body .box-icon{
+    display: none;
 }
 
 body .container .header{
@@ -81,18 +94,24 @@ body .container .main_container .accordian{
     text-align: left;
     font-size: 15px;
     padding-left: 0;
-    transition: 0.4s;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-width: thin;
+    border: none;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--Dark-grayish-blue);
+}
+
+.active{
+    font-weight: bold;
 }
 
 body .container .main_container .accordian:active{
     border:none;
 }
 
-.active, body .container .main_container .accordian:hover{
+body .container .main_container .accordian:hover{
     color: var(--Soft-red);
 }
 
@@ -102,5 +121,80 @@ body .container .main_container .panel{
     overflow: hidden;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+body .container .main_container .accordian img{
+    display: inline;
+    float: right;
+    padding-top: 6px;
+}
+
+
+
+.attribution { font-size: 11px; 
+    text-align: center;
+    margin-top: 4rem;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media all and (min-width: 500px){
+
+body{
+    position: relative;
+}
+
+    body .container{
+        display: flex;
+        max-width: 930px;
+        overflow: hidden;
+        margin-top: 5rem;
+    }
+
+    body .container .main_container{
+        flex: 1;
+        margin-right: 65px;
+        margin-left: 35px;
+    }
+
+    body .container .img_container{
+        flex: 1;
+        margin: auto;
+    }
+
+    body .container .img_container .over_desktop{
+        position: absolute;
+        top: -6.4rem;
+        left: -6rem;
+        display: block;
+        z-index: 99;
+    }
+    
+    body .container .img_container .under_desktop{
+        display: block;
+        position: absolute;
+        top: -29rem;
+        left: -37rem;
+
+    }
+
+    body .container .img_container .over_mobile{
+        display: none;
+        
+    }
+    
+    body .container .img_container .under_mobile{
+        display: none;
+    }
+
+    body .box-icon{
+        display: block;
+        position: absolute;
+        z-index: 999;
+        left: 6.9rem;
+        top: 11.5rem;
+    }
+
+    body .container .header{
+        font-size: 30px;
+        text-align: left;
+    }
+
+}
